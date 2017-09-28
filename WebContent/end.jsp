@@ -1,5 +1,6 @@
 <html>
 <head>
+title>CODE CASINO</title>
 <style type="text/css">
 body{
 background-repeat:no-repeat;

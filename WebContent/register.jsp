@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Registration</title>
+title>CODE CASINO</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -40,14 +40,14 @@
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input type="text" name="member2name" id="member2name" class="form-control input-md" placeholder="Second Member's Name" autocomplete="off"  required >
+			    						<input type="text" name="member2name" id="member2name" class="form-control input-md" placeholder="Second Member's Name" autocomplete="off"  >
 			    					</div>
 			    				</div>
 			    			</div>
                             <div class="row">
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input type="email" name="email" id="email" class="form-control input-md" placeholder="Email Address" autocomplete="off"  required>
+			    						<input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control input-md" placeholder="Email Address" autocomplete="off"  required>
 			    					</div>
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">

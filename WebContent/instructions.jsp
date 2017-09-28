@@ -2,7 +2,7 @@
 	<html>
 	<head>
 		<meta charset="utf-8">
-		<title>Instructions</title>
+title>CODE CASINO</title>
 
 	  <!-- Bootstrap core CSS -->
 		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
