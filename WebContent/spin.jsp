@@ -6,7 +6,46 @@
 	<head>
 		<meta charset="utf-8">
 <title>CODE CASINO</title>
-
+<script>
+window.oncontextmenu = function () {
+return false;
+}
+</script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+	document.onkeydown = function(){
+  switch (event.keyCode){
+        case 116 : //F5 button
+            event.returnValue = false;
+            event.keyCode = 0;
+            return false;
+        case 82 : //R button
+            if (event.ctrlKey){ 
+                event.returnValue = false;
+                event.keyCode = 0;
+                return false;
+            }
+		case 37 : //left arrow
+            if (event.altKey){ 
+                event.returnValue = false;
+                event.keyCode = 0;
+                return false;
+            }
+		case 39 : //Right arrow
+            if (event.altKey){ 
+                event.returnValue = false;
+                event.keyCode = 0;
+                return false;
+            }
+		case 85 : //U button
+            if (event.ctrlKey){ 
+                event.returnValue = false;
+                event.keyCode = 0;
+                return false;
+            }
+    }
+}
+</script>
 	  <!-- Bootstrap core CSS -->
 		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Joti+One" rel="stylesheet">
@@ -124,7 +163,7 @@ $(document).ready(function(){
 		
 			<button type="submit" name="submit" class="btn btn-lg" onClick="button1()">SUBMIT</button>
 			<button type="button" id="hint" name="hint" onClick="mymFunction()" class="btn btn-lg" data-toggle="modal" data-target="#hintmodal">A HINT MAYBE</button>
-			<button type="button" name="button" class="btn btn-lga  data-toggle="modal" data-target="#scoremodal">SCORE</button>
+			<button type="button" name="button" class="btn btn-lg"  data-toggle="modal" data-target="#scoremodal">SCORE</button>
 			<a href="instructions.jsp"><button class="btn btn-lg" data-toggle="modal" data-target="#instModal">READ INSTRUCTIONS</button></a>
 			<button class="btn btn-lg" onClick="fun()">QUIT</button>
 	</div>		 

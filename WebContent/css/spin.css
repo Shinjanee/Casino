@@ -86,14 +86,8 @@ body{
 	position:fixed;
 	top:80px;
     width: 250px;
-    background: none repeat scroll 0% 0% #FFFF00;
     border: 1px solid #91B57C;
     color: black;
-    border-radius: 8px;
-    box-shadow: 1px 2px 3px;
-        font-family:Helvetica, Arial, sans-serif;
-        font-size:11px;
-        pointer-events:none;
     
 	}
 #sizing-addon1{
