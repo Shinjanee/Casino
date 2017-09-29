@@ -15,7 +15,7 @@
 
 </head>
 
-
+<body>
 	<div class="header">
 	<center><h1><u>LOGIN</u></h1></center>
 </div>

@@ -112,7 +112,7 @@ $(document).ready(function(){
 </div>
 		<div id="question"><h1></h1></div>
 		<div class="input-group input-group-lg">
-           <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span>
+           <span class="input-group-addon" id="sizing-addon1" ><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span>
            <input type="text" name="ans1" id="ans1" class="form-control" size="105" placeholder="Enter Answer"  autocomplete="off" required required>
         	<input type="hidden" id="pick", name="pick" value="">
         	<input type="hidden" id="demo" name="demo" value="before">
@@ -197,9 +197,8 @@ $(document).ready(function(){
      <li>After brain storming with the question Submit the answer!</li>
      <li>Now your luck decides what reward you get for a correct answer</li>
      <li>The timer to keep on ticking and fate decides whether the next question is harder or easier</li>
-     <li>Wanna quit? You can't resume. Everybody gets one chance!</li> 
 	 <li>Want a hint? You may lose score!</li>
-	 <li>Score the maximum in 45 minutes to win!</li>
+	 <li>Score the maximum in 60 minutes to win!</li>
 	</h4>
 	</big>
 	</ol> 
