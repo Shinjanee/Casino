@@ -26,7 +26,46 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
-  
+  	<script>
+window.oncontextmenu = function () {
+return false;
+}
+</script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+	document.onkeydown = function(){
+  switch (event.keyCode){
+        case 116 : //F5 button
+            event.returnValue = false;
+            event.keyCode = 0;
+            return false;
+        case 82 : //R button
+            if (event.ctrlKey){ 
+                event.returnValue = false;
+                event.keyCode = 0;
+                return false;
+            }
+		case 37 : //left arrow
+            if (event.altKey){ 
+                event.returnValue = false;
+                event.keyCode = 0;
+                return false;
+            }
+		case 39 : //Right arrow
+            if (event.altKey){ 
+                event.returnValue = false;
+                event.keyCode = 0;
+                return false;
+            }
+		case 85 : //U button
+            if (event.ctrlKey){ 
+                event.returnValue = false;
+                event.keyCode = 0;
+                return false;
+            }
+    }
+}
+</script>
   </head>
  
 	
@@ -85,7 +124,7 @@ $(document).ready(function(){
 		
 			<button type="submit" name="submit" class="btn btn-lg" onClick="button1()">SUBMIT</button>
 			<button type="button" id="hint" name="hint" onClick="mymFunction()" class="btn btn-lg" data-toggle="modal" data-target="#hintmodal">A HINT MAYBE</button>
-			<button type="button" name="button" class="btn btn-lg"  data-toggle="modal" data-target="#scoremodal">SCORE</button>
+			<button type="button" name="button" class="btn btn-lga  data-toggle="modal" data-target="#scoremodal">SCORE</button>
 			<a href="instructions.jsp"><button class="btn btn-lg" data-toggle="modal" data-target="#instModal">READ INSTRUCTIONS</button></a>
 			<button class="btn btn-lg" onClick="fun()">QUIT</button>
 	</div>		 
@@ -119,7 +158,7 @@ $(document).ready(function(){
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">SCORE</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" id="modal-body1">
      <p style="font-size:60px">SCORE: <%while(set.next()){out.print(set.getInt("SCORE"));} %></p>
       </div>
     </div>
@@ -150,7 +189,7 @@ $(document).ready(function(){
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="instModalLabel">INSTRUCTIONS</h4>
        </div>
-     <div class="modal-body">
+     <div class="modal-body" id="modal-body1">
         <ol><big><h4>
      <li>The game is a completely random event.</li>
      <li>Spin the wheel to get a question.</li>

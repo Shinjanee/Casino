@@ -30,7 +30,7 @@ body{
 		overflow:auto;
 	    color:#black;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-		width: 830px;
+		width: 800px;
 		border: 10px solid #ccc;
 		border-radius: 3px;
        animation: blink 10s step-end infinite alternate;
@@ -170,6 +170,15 @@ left:300px;
 }
 
 .modal-body{
+	color: white;
+	font-size: 40;
+	background-image:url("https://media.giphy.com/media/yBdop1UNLAjza/giphy.gif");
+	background-size:cover;
+	background-repeat:no-repeat;
+	opacity:0.9;
+}
+
+#modal-body1{
 	color: white;
 	font-size: 40;
 	background-image:url("https://media.giphy.com/media/26uf2YTgF5upXUTm0/giphy.gif");
