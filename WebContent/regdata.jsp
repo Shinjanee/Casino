@@ -5,7 +5,7 @@
 <%@ page import="javax.servlet.http.*" %>
 <%@ include file="register.jsp" %>
 <%@ page import="java.io.*"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" >
@@ -15,9 +15,8 @@ title>CODE CASINO</title>
 <% 
 try 
 {
-  ResultSet rs=null;
   Class.forName("oracle.jdbc.driver.OracleDriver");
-  Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","system");
+  Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","system");
   String teamname = request.getParameter("teamname");
   String email = request.getParameter("email");
   String phone = request.getParameter("contact");
@@ -25,33 +24,33 @@ try
   String mem2 = request.getParameter("member2name");
   String cllg = request.getParameter("college");
   String pass = request.getParameter("password");
-  String passc = request.getParameter("password_confirmation");
-  Statement stat = con.createStatement();
+  Statement stat = conn.createStatement();
+  ResultSet rse=stat.executeQuery("select * from REGISTER");
   int f=0;
-  rs=stat.executeQuery("select * from REGISTER");
-  while(rs.next())
+  while(rse.next())
   {
-  	if(rs.getString("TEAM_NAME").equals(teamname))
+  	if(rse.getString("TEAM_NAME").equals(teamname))
   	 {f=1;break;}
   }
+
   if(f==0){
-  stat.executeUpdate("insert into REGISTER(TEAM_NAME,EMAIL_ID,CONTACT_NO,MEM1_FIRSTNAME,MEM2_FIRSTNAME,COLLEGE,PASSWORD,PASSWORD_CON) values('"+teamname+"','"+email+"','"+phone+"','"+mem1+"','"+mem2+"','"+cllg+"','"+pass+"','"+passc+"')");
-  rs=stat.executeQuery("select * from REGISTER");
-  stat.executeUpdate("insert into ANSWERS(TEAM_NAME) values('"+teamname+"')");
-  rs=stat.executeQuery("select * from ANSWERS");
-  stat.executeUpdate("insert into QUESTIONS(TEAM_NAME) values('"+teamname+"')");
-  rs=stat.executeQuery("select * from QUESTIONS");
-  String n=(String)request.getParameter("teamname");
-  HttpSession sess=request.getSession();
-  sess.setAttribute("SCORE",0);
-  sess.setAttribute("TEAM_NAME",n);
-  out.print("<span class=\"text\">WELCOME "+n+"</span>");
-  RequestDispatcher rd=request.getRequestDispatcher("spin.jsp");
-	rd.include(request,response);
-	}
+	  stat.executeUpdate("insert into REGISTER(TEAM_NAME,EMAIL_ID,CONTACT_NO,MEM1_FIRSTNAME,MEM2_FIRSTNAME,COLLEGE,PASSWORD) values('"+teamname+"','"+email+"','"+phone+"','"+mem1+"','"+mem2+"','"+cllg+"','"+pass+"')");
+	  rse=stat.executeQuery("select * from REGISTER");
+	  stat.executeUpdate("insert into ANSWERS(TEAM_NAME) values('"+teamname+"')");
+	  rse=stat.executeQuery("select * from ANSWERS");
+	  stat.executeUpdate("insert into QUESTIONS(TEAM_NAME) values('"+teamname+"')");
+	  rse=stat.executeQuery("select * from QUESTIONS");
+	  String n=(String)request.getParameter("teamname");
+	  HttpSession sess=request.getSession();
+	  sess.setAttribute("SCORE",0);
+	  sess.setAttribute("TEAM_NAME",n);
+	  RequestDispatcher rd=request.getRequestDispatcher("login.jsp");
+		rd.forward(request,response);
+  }
   else
   {
-	 %><script>alert("Team Name already registered!");</script><%  }
+	  %><script>alert("Team Name Already Registered!");</script><% 
+  }
  %>
 
 <% }catch(ClassNotFoundException e)

@@ -101,17 +101,9 @@ return false;
 			    				<input type="text" name="college" id="college" class="form-control input-md" placeholder="College " autocomplete="off"  required>
 			    			</div>
 
-			    			<div class="row">
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
 			    						<input type="password" name="password" id="password" class="form-control input-md" placeholder="Password" autocomplete="off"  required>
 			    					</div>
-			    				</div>
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form-group">
-			    						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-md" placeholder="Confirm Password" autocomplete="off"  required>
-			    					</div>
-			    				</div>
 			    			</div>
 			    			<div>
 			    			<button type="submit"  class="btn btn-success btn-block">Register</button>

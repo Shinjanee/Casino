@@ -33,9 +33,8 @@ if(f==1)
 	int sc=sett.getInt("SCORE");
 	session.setAttribute("SCORE",sc);}
 	session.setAttribute("TEAM_NAME",n);
-	out.print("<span class=\"text\">WELCOME "+n+"</span>");
 	RequestDispatcher r=request.getRequestDispatcher("spin.jsp");
-	r.include(request,response);
+	r.forward(request,response);
 	
 }
 else

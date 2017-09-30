@@ -61,9 +61,9 @@ return false;
 
 <form method="post" action="logdata.jsp">
 	<div class="container">
-	<div class="row centered-form">
-        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-        	<div class="panel">
+		<div class="row centered-form">
+        	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+        		<div class="panel">
 			 		<div class="panel-body">
 						<div class="form-group"><!-- Add the required field to all input boxes-->
 			    				<input type="text" name="teamname" id="teamname" class="form-control input-md" placeholder="TEAM NAME" autocomplete="off" required>
@@ -80,13 +80,13 @@ return false;
 			    			<div>
 			    			<button type="submit"  class="btn btn-success btn-block">Login</button>
 			    		</div>
-			    		</form>
+			    		
 			    	</div>
 	    	</div>
     	</div>
     </div>
 </div>
-
+</form>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
