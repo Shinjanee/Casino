@@ -116,6 +116,7 @@ return false;
 			    			<div>
 			    			<button type="submit"  class="btn btn-success btn-block">Register</button>
 			    		</div>
+			    		<h5><center><a href="login.jsp">Already Registered? Login here</a></center></h5>
 			    		</form>
 			    	</div>
 	    	</div>

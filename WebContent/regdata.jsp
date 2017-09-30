@@ -27,6 +27,14 @@ try
   String pass = request.getParameter("password");
   String passc = request.getParameter("password_confirmation");
   Statement stat = con.createStatement();
+  int f=0;
+  rs=stat.executeQuery("select * from REGISTER");
+  while(rs.next())
+  {
+  	if(rs.getString("TEAM_NAME").equals(teamname))
+  	 {f=1;break;}
+  }
+  if(f==0){
   stat.executeUpdate("insert into REGISTER(TEAM_NAME,EMAIL_ID,CONTACT_NO,MEM1_FIRSTNAME,MEM2_FIRSTNAME,COLLEGE,PASSWORD,PASSWORD_CON) values('"+teamname+"','"+email+"','"+phone+"','"+mem1+"','"+mem2+"','"+cllg+"','"+pass+"','"+passc+"')");
   rs=stat.executeQuery("select * from REGISTER");
   stat.executeUpdate("insert into ANSWERS(TEAM_NAME) values('"+teamname+"')");
@@ -40,6 +48,10 @@ try
   out.print("<span class=\"text\">WELCOME "+n+"</span>");
   RequestDispatcher rd=request.getRequestDispatcher("spin.jsp");
 	rd.include(request,response);
+	}
+  else
+  {
+	 %><script>alert("Team Name already registered!");</script><%  }
  %>
 
 <% }catch(ClassNotFoundException e)

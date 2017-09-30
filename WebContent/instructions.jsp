@@ -3,7 +3,7 @@
 	<head>
 
 		<meta charset="utf-8">
-title>CODE CASINO</title>
+<title>CODE CASINO</title>
 
 	  <!-- Bootstrap core CSS -->
 		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
@@ -78,7 +78,7 @@ return false;
 	</ul> </div></div>
 	<div class="row">
   <div class="col-sm-6 col-md-6">
-  <button class="btn btn-outline-secondary btn-block"><a href="spin.jsp">START GAME</a></button>
+  <button class="btn btn-outline-secondary btn-block"><a href="frontpage.jsp">BACK</a></button>
   </div>
 </div>
 
