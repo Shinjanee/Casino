@@ -67,13 +67,14 @@ return false;
    <ul><big>
      <li>The game is a completely random event.</li>
      <li>Spin the wheel to get a question.</li>
-     <li>The questions based on Data Structures, Algorithms, Basic programming knowledge or reasoning..</li>
+     <li>The questions based on data structures, algorithms,Basic Programming Concepts or reasoning..</li>
      <li>After brain storming with the question Submit the answer!</li>
      <li>Now your luck decides what reward you get for a correct answer</li>
      <li>The timer to keep on ticking and fate decides whether the next question is harder or easier</li>
-     <li>Wanna quit? You can't resume. Everybody gets one chance!</li> 
-	 <li>Want a hint? You may lose score.</li>
-	 <li>Score the maximum in 45 minutes to win!</li>
+	 <li>Want a hint? You may lose score!</li>
+	 <li>You can't see the hints for other questions until you submit your answer</li>
+	 <li>No negative marks for wrong answer</li>
+	 <li>Score the maximum in 60 minutes to win!</li>
 	</big>
 	</ul> </div></div>
 	<div class="row">

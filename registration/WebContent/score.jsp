@@ -41,7 +41,7 @@ try
 	PreparedStatement x=connec.prepareStatement(sq);
 	x.setString(1,nmm);
 	ResultSet rst=x.executeQuery(); 
-	
+
 	
 	if(answer.equals("1"))
 	{

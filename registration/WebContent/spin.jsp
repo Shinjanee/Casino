@@ -85,7 +85,7 @@ return false;
  
 	
 
-<body>
+<body> 
 
     <form name="form" method="post" action="score.jsp">
 <script type="text/javascript">
@@ -214,6 +214,8 @@ $(document).ready(function(){
      <li>Now your luck decides what reward you get for a correct answer</li>
      <li>The timer to keep on ticking and fate decides whether the next question is harder or easier</li>
 	 <li>Want a hint? You may lose score!</li>
+	 <li>You can't see the hints for other questions until you submit your answer</li>
+	 <li>No negative marks for wrong answer</li>
 	 <li>Score the maximum in 60 minutes to win!</li>
 	</h4>
 	</big>
@@ -1166,9 +1168,13 @@ out.println(e1);
         x.style.display = 'none';
     }
 }
-   
+
    function mymFunction() {
+	   var user="0";
 	    document.getElementById("demo").value = hint[picked]["question"];
+	    user=document.getElementById("demo").value;
+	    if(user=="No hint"){
+	       	document.getElementById("hint").disabled=true;}
 	}
   $('#hintmodal').on('show.bs.modal', function (event) {
 	      var button = $(event.relatedTarget) 
