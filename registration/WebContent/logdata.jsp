@@ -39,7 +39,7 @@ if(f==1)
 }
 else
 {
-	out.print("<span class=\"text1\">Not registered!</span>");
+	 %><script>alert("Not Registered!");</script><% 
 }
 %>
 </body>

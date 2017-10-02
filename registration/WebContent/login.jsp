@@ -80,7 +80,7 @@ return false;
 			    			<div>
 			    			<button type="submit"  class="btn btn-success btn-block">Login</button>
 			    		</div>
-			    		
+			    		<h5><center><a href="register.jsp">Not Registered? Register here</a></center></h5>
 			    	</div>
 	    	</div>
     	</div>
