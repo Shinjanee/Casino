@@ -1,15 +1,16 @@
 <html>
 <head>
 
-title>CODE CASINO</title>
+<title>CODE CASINO</title>
 <style type="text/css">
 body{
 background-repeat:no-repeat;
 background-size:60% 100%;
 background-position:center;
-background-color:black;
+background-color:blue;
 
 }
+
 </style>
 <script>
 window.oncontextmenu = function () {
@@ -52,6 +53,10 @@ return false;
 }
 </script>
 </head>
-<body background="https://media.giphy.com/media/Zrv3Lx3O0zasE/giphy.gif">
+<body background="https://media.giphy.com/media/ehhuGD0nByYxO/giphy.gif">
+<div style="position: relative">
+                <h2 style="position: fixed; bottom: 0; width:100%; text-align: center;font-family: 'Abril Fatface', cursive;color:blue;"> YOU HAVE COMPLETED ALL THE QUESTIONS!!
+                </h2>
+            </div>
 </body>
 </html>
