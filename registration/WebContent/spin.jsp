@@ -481,6 +481,7 @@ var padding = {top:20, right:40, bottom:0, left:0},
 
         container.on("click", spin);
         var k=1,m="0";
+		var cn=0;  
         <% 
             
 try {String q1="0";String q2="0";String q3="0";String q4="0";String q5="0";String q6="0";String q7="0";
@@ -502,22 +503,24 @@ while(rs.next()) {
 q1=rs.getString("Q1");
 
 %>m=<%=q1%> 
-if(m=="1"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
 <%
 q2=rs.getString("Q2");
 %>m=<%=q2%> 
-if(m=="2"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";  
@@ -525,11 +528,12 @@ m="0";
 <%
 q3=rs.getString("Q3");
 %>m=<%=q3%> 
-if(m=="3"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -537,11 +541,12 @@ m="0";
 <%
 q4=rs.getString("Q4");
 %>m=<%=q4%> 
-if(m=="4"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -549,11 +554,12 @@ m="0";
 <%
 q5=rs.getString("Q5");
 %>m=<%=q5%> 
-if(m=="5"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -561,11 +567,12 @@ m="0";
 <%
 q6=rs.getString("Q6");
 %>m=<%=q6%> 
-if(m=="6"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -573,11 +580,12 @@ m="0";
 <%
 q7=rs.getString("Q7");
 %>m=<%=q7%> 
-if(m=="7"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -585,11 +593,12 @@ m="0";
 <%
 q8=rs.getString("Q8");
 %>m=<%=q8%> 
-if(m=="8"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -597,11 +606,12 @@ m="0";
 <%
 q9=rs.getString("Q9");
 %>m=<%=q9%> 
-if(m=="9"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -609,11 +619,12 @@ m="0";
 <%
 q10=rs.getString("Q10");
 %>m=<%=q10%> 
-if(m=="10"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -621,11 +632,12 @@ m="0";
 <%
 q11=rs.getString("Q11");
 %>m=<%=q11%> 
-if(m=="11"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -633,11 +645,12 @@ m="0";
 <%
 q12=rs.getString("Q12");
 %>m=<%=q12%> 
-if(m=="12"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -645,11 +658,12 @@ m="0";
 <%
 q13=rs.getString("Q13");
 %>m=<%=q13%> 
-if(m=="13"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -657,11 +671,12 @@ m="0";
 <%
 q14=rs.getString("Q14");
 %>m=<%=q14%> 
-if(m=="14"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -669,11 +684,12 @@ m="0";
 <%
 q15=rs.getString("Q15");
 %>m=<%=q15%> 
-if(m=="15"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -681,11 +697,12 @@ m="0";
 <%
 q16=rs.getString("Q16");
 %>m=<%=q16%> 
-if(m=="16"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -693,11 +710,12 @@ m="0";
 <%
 q17=rs.getString("Q17");
 %>m=<%=q17%> 
-if(m=="17"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -705,11 +723,12 @@ m="0";
 <%
 q18=rs.getString("Q18");
 %>m=<%=q18%> 
-if(m=="18"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -717,11 +736,12 @@ m="0";
 <%
 q19=rs.getString("Q19");
 %>m=<%=q19%> 
-if(m=="19"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -729,11 +749,12 @@ m="0";
 <%
 q20=rs.getString("Q20");
 %>m=<%=q20%> 
-if(m=="20"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -741,11 +762,12 @@ m="0";
 <%
 q21=rs.getString("Q21");
 %>m=<%=q21%> 
-if(m=="21"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -753,11 +775,12 @@ m="0";
 <%
 q22=rs.getString("Q22");
 %>m=<%=q22%> 
-if(m=="22"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -765,11 +788,12 @@ m="0";
 <%
 q23=rs.getString("Q23");
 %>m=<%=q23%> 
-if(m=="23"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -777,11 +801,12 @@ m="0";
 <%
 q24=rs.getString("Q24");
 %>m=<%=q24%> 
-if(m=="24"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -789,11 +814,12 @@ m="0";
 <%
 q25=rs.getString("Q25");
 %>m=<%=q25%> 
-if(m=="25"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -801,11 +827,12 @@ m="0";
 <%
 q26=rs.getString("Q26");
 %>m=<%=q26%> 
-if(m=="26"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -813,11 +840,12 @@ m="0";
 <%
 q27=rs.getString("Q27");
 %>m=<%=q27%> 
-if(m=="27"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -825,11 +853,12 @@ m="0";
 <%
 q28=rs.getString("Q28");
 %>m=<%=q28%> 
-if(m=="28"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -837,11 +866,12 @@ m="0";
 <%
 q29=rs.getString("Q29");
 %>m=<%=q29%> 
-if(m=="29"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -849,11 +879,12 @@ m="0";
 <%
 q30=rs.getString("Q30");
 %>m=<%=q30%> 
-if(m=="30"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -861,11 +892,12 @@ m="0";
 <%
 q31=rs.getString("Q31");
 %>m=<%=q31%> 
-if(m=="31"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -873,11 +905,12 @@ m="0";
 <%
 q32=rs.getString("Q32");
 %>m=<%=q32%> 
-if(m=="32"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -885,11 +918,12 @@ m="0";
 <%
 q33=rs.getString("Q33");
 %>m=<%=q33%> 
-if(m=="33"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -897,11 +931,12 @@ m="0";
 <%
 q34=rs.getString("Q34");
 %>m=<%=q34%> 
-if(m=="34"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -909,11 +944,12 @@ m="0";
 <%
 q35=rs.getString("Q35");
 %>m=<%=q35%> 
-if(m=="35"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -921,11 +957,12 @@ m="0";
 <%
 q36=rs.getString("Q36");
 %>m=<%=q36%> 
-if(m=="36"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -933,11 +970,12 @@ m="0";
 <%
 q37=rs.getString("Q37");
 %>m=<%=q37%> 
-if(m=="37"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -945,11 +983,12 @@ m="0";
 <%
 q38=rs.getString("Q38");
 %>m=<%=q38%> 
-if(m=="38"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -957,11 +996,12 @@ m="0";
 <%
 q39=rs.getString("Q39");
 %>m=<%=q39%> 
-if(m=="39"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -969,11 +1009,12 @@ m="0";
 <%
 q40=rs.getString("Q40");
 %>m=<%=q40%> 
-if(m=="40"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -981,11 +1022,12 @@ m="0";
 <%
 q41=rs.getString("Q41");
 %>m=<%=q41%> 
-if(m=="41"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -993,11 +1035,12 @@ m="0";
 <%
 q42=rs.getString("Q42");
 %>m=<%=q42%> 
-if(m=="42"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -1005,11 +1048,12 @@ m="0";
 <%
 q43=rs.getString("Q43");
 %>m=<%=q43%> 
-if(m=="43"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -1017,11 +1061,12 @@ m="0";
 <%
 q44=rs.getString("Q44");
 %>m=<%=q44%> 
-if(m=="44"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -1029,11 +1074,12 @@ m="0";
 <%
 q45=rs.getString("Q45");
 %>m=<%=q45%> 
-if(m=="45"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(k-1);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
@@ -1041,16 +1087,20 @@ m="0";
 <%
 q46=rs.getString("Q46");
 %>m=<%=q46%> 
-if(m=="46"){
+if(m!="0"){
 d3.select(".slice:nth-child(" + (k) + ") path")
 .attr("fill", "#111");
 k = k >= data.length ?  (k % data.length) : k;
 oldpick.push(45);
+cn=cn+1;
 		}
 k=k+1;
 m="0";
+if(cn==46)
+	{
+	window.location="end.jsp";
+	}
 <%
-
 }
 //step5 close the connection object  
 conn.close();
