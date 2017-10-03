@@ -36,24 +36,24 @@ try
 	String z40="0";String z41="0";String z42="0";String z43="0";String z44="0";String z45="0";String z46="0";
 	Class.forName("oracle.jdbc.driver.OracleDriver");
 	Connection connec = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","system");
-	String sq="select * from  ANSWERS where TEAM_NAME=?";
+	String sq="select * from  QUESTIONS where TEAM_NAME=?";
 	String nmm=(String)session.getAttribute("TEAM_NAME");
 	PreparedStatement x=connec.prepareStatement(sq);
 	x.setString(1,nmm);
 	ResultSet rst=x.executeQuery(); 
-
 	
 	if(answer.equals("1"))
 	{
 		while(rst.next()) { 
-			z1=rst.getString("A1");}
+			z1=rst.getString("Q1");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A1=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A1").equals(ans) && z1.equals("0"))
-				ss+=10;}
+		if(rs.getString("A1").equalsIgnoreCase(ans) && z1.equals("0"))
+			ss+=10;
+		}
  		session.setAttribute("SCORE",ss);
  		session.setAttribute("A1",ans);
 		ps.setInt(1,ss);
@@ -83,14 +83,15 @@ try
 	else if(answer.equals("2"))
 	{
 		while(rst.next()) { 
-			z2=rst.getString("A2");}
+			z2=rst.getString("Q2");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A2=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A2").equals(ans) && z2.equals("0"))
-				ss+=20;}
+		if(rs.getString("A2").equalsIgnoreCase(ans) && z2.equals("0"))
+				ss+=20;
+				}
  		session.setAttribute("SCORE",ss);
  		session.setAttribute("A2",ans);
 		ps.setInt(1,ss);
@@ -121,14 +122,15 @@ try
 	else if(answer.equals("3"))
 	{
 		while(rst.next()) { 
-			z3=rst.getString("A3");}
+			z3=rst.getString("Q3");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A3=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A3").equals(ans) && z3.equals("0"))
-				ss+=5;}
+		if(rs.getString("A3").equalsIgnoreCase(ans) && z3.equals("0"))
+				ss+=5;
+			}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A3",ans);
 		ps.setInt(1,ss);
@@ -159,14 +161,15 @@ try
 	else if(answer.equals("4"))
 	{
 		while(rst.next()) { 
-			z4=rst.getString("A4");}
+			z4=rst.getString("Q4");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A4=? where TEAM_NAME=?");
 		while(rs.next()){
-			if(rs.getString("A4").equals(ans) && z4.equals("0") )
-				ss+=10;}
+			if(rs.getString("A4").equalsIgnoreCase(ans) && z4.equals("0") )
+				ss+=10;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A4",ans);
 		ps.setInt(1,ss);
@@ -197,14 +200,15 @@ try
 	else if(answer.equals("5"))
 	{
 		while(rst.next()) { 
-			z5=rst.getString("A1");}
+			z5=rst.getString("Q5");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A5=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A5").equals(ans) && z5.equals("0"))
-				ss+=15;}
+		if(rs.getString("A5").equalsIgnoreCase(ans) && z5.equals("0"))
+				ss+=15;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A5",ans);
 		ps.setInt(1,ss);
@@ -236,14 +240,15 @@ try
 	else if(answer.equals("6"))
 	{
 		while(rst.next()) { 
-			z6=rst.getString("A6");}
+			z6=rst.getString("Q6");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A6=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A6").equals(ans) && z6.equals("0"))
-				ss+=10;}
+		if(rs.getString("A6").equalsIgnoreCase(ans) && z6.equals("0"))
+				ss+=10;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A6",ans);
 		ps.setInt(1,ss);
@@ -275,14 +280,15 @@ try
 	else if(answer.equals("7"))
 	{
 		while(rst.next()) { 
-			z7=rst.getString("A7");}
+			z7=rst.getString("Q7");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A7=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A7").equals(ans) && z7.equals("0"))
-				ss+=10;}
+		if(rs.getString("A7").equalsIgnoreCase(ans) && z7.equals("0"))
+				ss+=10;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A7",ans);
 		ps.setInt(1,ss);
@@ -313,14 +319,15 @@ try
 	else if(answer.equals("8"))
 	{
 		while(rst.next()) { 
-			z8=rst.getString("A8");}
+			z8=rst.getString("Q8");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A8=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A8").equals(ans) && z8.equals("0"))
-				ss+=20;}
+		if(rs.getString("A8").equalsIgnoreCase(ans) && z8.equals("0"))
+				ss+=20;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A8",ans);
 		ps.setInt(1,ss);
@@ -351,14 +358,15 @@ try
 	else if(answer.equals("9"))
 	{
 		while(rst.next()) { 
-			z9=rst.getString("A9");}
+			z9=rst.getString("Q9");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A9=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A9").equals(ans) && z9.equals("0"))
-				ss+=5;}
+		if(rs.getString("A9").equalsIgnoreCase(ans) && z9.equals("0"))
+				ss+=5;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A9",ans);
 		ps.setInt(1,ss);
@@ -389,14 +397,15 @@ try
 	else if(answer.equals("10"))
 	{
 		while(rst.next()) { 
-			z10=rst.getString("A10");}
+			z10=rst.getString("Q10");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A10=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A10").equals(ans) && z10.equals("0"))
-				ss+=15;}
+		if(rs.getString("A10").equalsIgnoreCase(ans) && z10.equals("0"))
+				ss+=15;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A10",ans);
 		ps.setInt(1,ss);
@@ -427,14 +436,15 @@ try
 	else if(answer.equals("11"))
 	{
 		while(rst.next()) { 
-			z11=rst.getString("A11");}
+			z11=rst.getString("Q11");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A11=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A11").equals(ans) && z11.equals("0"))
-				ss+=5;}
+		if(rs.getString("A11").equalsIgnoreCase(ans) && z11.equals("0"))
+				ss+=5;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A11",ans);
 		ps.setInt(1,ss);
@@ -465,14 +475,15 @@ try
 	else if(answer.equals("12"))
 	{
 		while(rst.next()) { 
-			z12=rst.getString("A12");}
+			z12=rst.getString("Q12");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A12=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A12").equals(ans) && z12.equals("0"))
-				ss+=10;}
+		if(rs.getString("A12").equalsIgnoreCase(ans) && z12.equals("0"))
+				ss+=10;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A12",ans);
 		ps.setInt(1,ss);
@@ -503,14 +514,15 @@ try
 	else if(answer.equals("13"))
 	{
 		while(rst.next()) { 
-			z13=rst.getString("A13");}
+			z13=rst.getString("Q13");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A13=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A13").equals(ans) && z13.equals("0"))
-				ss+=10;}
+		if(rs.getString("A13").equalsIgnoreCase(ans) && z13.equals("0"))
+				ss+=10;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A13",ans);
 		ps.setInt(1,ss);
@@ -541,14 +553,15 @@ try
 	else if(answer.equals("14"))
 	{
 		while(rst.next()) { 
-			z14=rst.getString("A14");}
+			z14=rst.getString("Q14");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A14=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A14").equals(ans) && z14.equals("0"))
-				ss+=15;}
+		if(rs.getString("A14").equalsIgnoreCase(ans) && z14.equals("0"))
+				ss+=15;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A14",ans);
 		ps.setInt(1,ss);
@@ -579,14 +592,15 @@ try
 	else if(answer.equals("15"))
 	{
 		while(rst.next()) { 
-			z15=rst.getString("A15");}
+			z15=rst.getString("Q15");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A15=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A15").equals(ans) && z15.equals("0"))
-				ss+=15;}
+		if(rs.getString("A15").equalsIgnoreCase(ans) && z15.equals("0"))
+				ss+=15;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A15",ans);
 		ps.setInt(1,ss);
@@ -617,14 +631,15 @@ try
 	else if(answer.equals("16"))
 	{
 		while(rst.next()) { 
-			z16=rst.getString("A16");}
+			z16=rst.getString("Q16");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A16=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A16").equals(ans) && z16.equals("0"))
-				ss+=10;}
+		if(rs.getString("A16").equalsIgnoreCase(ans) && z16.equals("0"))
+				ss+=10;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A16",ans);
 		ps.setInt(1,ss);
@@ -655,14 +670,15 @@ try
 	else if(answer.equals("17"))
 	{
 		while(rst.next()) { 
-			z17=rst.getString("A17");}
+			z17=rst.getString("Q17");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A17=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A17").equals(ans) && z17.equals("0"))
-				ss+=10;}
+		if(rs.getString("A17").equalsIgnoreCase(ans) && z17.equals("0"))
+				ss+=10;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A1",ans);
 		ps.setInt(1,ss);
@@ -693,14 +709,15 @@ try
 	else if(answer.equals("18"))
 	{
 		while(rst.next()) { 
-			z18=rst.getString("A18");}
+			z18=rst.getString("Q18");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A18=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A18").equals(ans) && z18.equals("0"))
-				ss+=20;}
+		if(rs.getString("A18").equalsIgnoreCase(ans) && z18.equals("0"))
+				ss+=20;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A18",ans);
 		ps.setInt(1,ss);
@@ -731,14 +748,15 @@ try
 	else if(answer.equals("19"))
 	{
 		while(rst.next()) { 
-			z19=rst.getString("A19");}
+			z19=rst.getString("Q19");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A19=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A19").equals(ans) && z19.equals("0"))
-				ss+=5;}
+		if(rs.getString("A19").equalsIgnoreCase(ans) && z19.equals("0"))
+				ss+=5;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A19",ans);
 		ps.setInt(1,ss);
@@ -769,14 +787,15 @@ try
 	else if(answer.equals("20"))
 	{
 		while(rst.next()) { 
-			z20=rst.getString("A20");}
+			z20=rst.getString("Q20");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A20=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A20").equals(ans) && z20.equals("0"))
-				ss+=20;}
+		if(rs.getString("A20").equalsIgnoreCase(ans) && z20.equals("0"))
+				ss+=20;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A20",ans);
 		ps.setInt(1,ss);
@@ -807,14 +826,15 @@ try
 	else if(answer.equals("21"))
 	{
 		while(rst.next()) { 
-			z21=rst.getString("A21");}
+			z21=rst.getString("Q21");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A21=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A21").equals(ans) && z21.equals("0"))
-				ss+=15;}
+		if(rs.getString("A21").equalsIgnoreCase(ans) && z21.equals("0"))
+				ss+=15;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A21",ans);
 		ps.setInt(1,ss);
@@ -844,14 +864,15 @@ try
 	else if(answer.equals("22"))
 	{
 		while(rst.next()) { 
-			z22=rst.getString("A22");}
+			z22=rst.getString("Q22");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A22=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A22").equals(ans) && z22.equals("0"))
-				ss+=20;}
+		if(rs.getString("A22").equalsIgnoreCase(ans) && z22.equals("0"))
+				ss+=20;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A22",ans);
 		ps.setInt(1,ss);
@@ -881,14 +902,15 @@ try
 	else if(answer.equals("23"))
 	{
 		while(rst.next()) { 
-			z23=rst.getString("A23");}
+			z23=rst.getString("Q23");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A23=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A23").equals(ans) && z23.equals("0"))
-				ss+=10;}
+		if(rs.getString("A23").equalsIgnoreCase(ans) && z23.equals("0"))
+				ss+=10;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A23",ans);
 		ps.setInt(1,ss);
@@ -919,14 +941,15 @@ try
 	else if(answer.equals("24"))
 	{
 		while(rst.next()) { 
-			z24=rst.getString("A24");}
+			z24=rst.getString("Q24");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A24=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A24").equals(ans) && z24.equals("0"))
-				ss+=10;}
+		if(rs.getString("A24").equalsIgnoreCase(ans) && z24.equals("0"))
+				ss+=10;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A24",ans);
 		ps.setInt(1,ss);
@@ -957,14 +980,15 @@ try
 	else if(answer.equals("25"))
 	{
 		while(rst.next()) { 
-			z25=rst.getString("A25");}
+			z25=rst.getString("Q25");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A25=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A25").equals(ans) && z25.equals("0"))
-				ss+=10;}
+		if(rs.getString("A25").equalsIgnoreCase(ans) && z25.equals("0"))
+				ss+=10;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A25",ans);
 		ps.setInt(1,ss);
@@ -995,14 +1019,15 @@ try
 	else if(answer.equals("26"))
 	{
 		while(rst.next()) { 
-			z26=rst.getString("A26");}
+			z26=rst.getString("Q26");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A26=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A26").equals(ans) && z26.equals("0"))
-				ss+=15;}
+		if(rs.getString("A26").equalsIgnoreCase(ans) && z26.equals("0"))
+				ss+=15;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A26",ans);
 		ps.setInt(1,ss);
@@ -1033,14 +1058,15 @@ try
 	else if(answer.equals("27"))
 	{
 		while(rst.next()) { 
-			z27=rst.getString("A27");}
+			z27=rst.getString("Q27");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A27=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A27").equals(ans) && z27.equals("0"))
-				ss+=5;}
+		if(rs.getString("A27").equalsIgnoreCase(ans) && z27.equals("0"))
+				ss+=5;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A27",ans);
 		ps.setInt(1,ss);
@@ -1071,14 +1097,15 @@ try
 	else if(answer.equals("28"))
 	{
 		while(rst.next()) { 
-			z28=rst.getString("A28");}
+			z28=rst.getString("Q28");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A28=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A28").equals(ans) && z28.equals("0"))
-				ss+=5;}
+		if(rs.getString("A28").equalsIgnoreCase(ans) && z28.equals("0"))
+				ss+=5;
+		}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A28",ans);
 		ps.setInt(1,ss);
@@ -1109,14 +1136,15 @@ try
 	else if(answer.equals("29"))
 	{
 		while(rst.next()) { 
-			z29=rst.getString("A29");}
+			z29=rst.getString("Q29");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A29=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A29").equals(ans) && z29.equals("0"))
-				ss+=15;}
+		if(rs.getString("A29").equalsIgnoreCase(ans) && z29.equals("0"))
+				ss+=15;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A29",ans);
 		ps.setInt(1,ss);
@@ -1147,14 +1175,15 @@ try
 	else if(answer.equals("30"))
 	{
 		while(rst.next()) { 
-			z30=rst.getString("A30");}
+			z30=rst.getString("Q30");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A30=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A30").equals(ans) && z30.equals("0"))
-				ss+=20;}
+		if(rs.getString("A30").equalsIgnoreCase(ans) && z30.equals("0"))
+				ss+=20;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A30",ans);
 		ps.setInt(1,ss);
@@ -1185,14 +1214,15 @@ try
 	else if(answer.equals("31"))
 	{
 		while(rst.next()) { 
-			z31=rst.getString("A31");}
+			z31=rst.getString("Q31");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A31=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A31").equals(ans) && z31.equals("0"))
-				ss+=10;}
+		if(rs.getString("A31").equalsIgnoreCase(ans) && z31.equals("0"))
+				ss+=10;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A31",ans);
 		ps.setInt(1,ss);
@@ -1223,13 +1253,13 @@ try
 	else if(answer.equals("32"))
 	{
 		while(rst.next()) { 
-			z32=rst.getString("A32");}
+			z32=rst.getString("Q32");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A32=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A32").equals(ans) && z32.equals("0"))
+		if(rs.getString("A32").equalsIgnoreCase(ans) && z32.equals("0"))
 				ss+=10;}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A32",ans);
@@ -1261,14 +1291,15 @@ try
 	else if(answer.equals("33"))
 	{
 		while(rst.next()) { 
-			z33=rst.getString("A33");}
+			z33=rst.getString("Q33");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A33=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A33").equals(ans) && z33.equals("0"))
-				ss+=5;}
+		if(rs.getString("A33").equalsIgnoreCase(ans) && z33.equals("0"))
+				ss+=5;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A33",ans);
 		ps.setInt(1,ss);
@@ -1299,13 +1330,13 @@ try
 	else if(answer.equals("34"))
 	{
 		while(rst.next()) { 
-			z34=rst.getString("A34");}
+			z34=rst.getString("Q34");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A34=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A34").equals(ans) && z34.equals("0"))
+		if(rs.getString("A34").equalsIgnoreCase(ans) && z34.equals("0"))
 				ss+=15;}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A34",ans);
@@ -1337,13 +1368,13 @@ try
 	else if(answer.equals("35"))
 	{
 		while(rst.next()) { 
-			z35=rst.getString("A35");}
+			z35=rst.getString("Q35");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A35=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A35").equals(ans) && z35.equals("0"))
+		if(rs.getString("A35").equalsIgnoreCase(ans) && z35.equals("0"))
 				ss+=10;}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A35",ans);
@@ -1375,14 +1406,15 @@ try
 	else if(answer.equals("36"))
 	{
 		while(rst.next()) { 
-			z36=rst.getString("A36");}
+			z36=rst.getString("Q36");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A36=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A36").equals(ans) && z36.equals("0"))
-				ss+=20;}
+		if(rs.getString("A36").equalsIgnoreCase(ans) && z36.equals("0"))
+				ss+=20;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A36",ans);
 		ps.setInt(1,ss);
@@ -1413,14 +1445,15 @@ try
 	else if(answer.equals("37"))
 	{
 		while(rst.next()) { 
-			z37=rst.getString("A37");}
+			z37=rst.getString("Q37");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A37=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A37").equals(ans) && z37.equals("0"))
-				ss+=10;}
+		if(rs.getString("A37").equalsIgnoreCase(ans) && z37.equals("0"))
+				ss+=10;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A37",ans);
 		ps.setInt(1,ss);
@@ -1451,14 +1484,15 @@ try
 	else if(answer.equals("38"))
 	{
 		while(rst.next()) { 
-			z38=rst.getString("A38");}
+			z38=rst.getString("Q38");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A38=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A38").equals(ans) && z38.equals("0"))
-				ss+=5;}
+		if(rs.getString("A38").equalsIgnoreCase(ans) && z38.equals("0"))
+				ss+=5;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A38",ans);
 		ps.setInt(1,ss);
@@ -1489,14 +1523,15 @@ try
 	else if(answer.equals("39"))
 	{
 		while(rst.next()) { 
-			z39=rst.getString("A39");}
+			z39=rst.getString("Q39");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A39=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A39").equals(ans) && z39.equals("0"))
-				ss+=15;}
+		if(rs.getString("A39").equalsIgnoreCase(ans) && z39.equals("0"))
+				ss+=15;
+		}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A39",ans);
 		ps.setInt(1,ss);
@@ -1527,14 +1562,15 @@ try
 	else if(answer.equals("40"))
 	{
 		while(rst.next()) { 
-			z40=rst.getString("A40");}
+			z40=rst.getString("Q40");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A40=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A40").equals(ans) && z40.equals("0"))
-				ss+=15;}
+		if(rs.getString("A40").equalsIgnoreCase(ans) && z40.equals("0"))
+				ss+=15;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A40",ans);
 		ps.setInt(1,ss);
@@ -1565,14 +1601,16 @@ try
 	else if(answer.equals("41"))
 	{
 		while(rst.next()) { 
-			z41=rst.getString("A41");}
+			z41=rst.getString("Q41");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A41=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A41").equals(ans) && z41.equals("0"))
-				ss+=10;}
+		if(rs.getString("A41").equalsIgnoreCase(ans) && z41.equals("0"))
+				ss+=10;
+		
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A41",ans);
 		ps.setInt(1,ss);
@@ -1603,14 +1641,16 @@ try
 	else if(answer.equals("42"))
 	{
 		while(rst.next()) { 
-			z42=rst.getString("A42");}
+			z42=rst.getString("Q42");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A42=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A42").equals(ans) && z42.equals("0"))
-				ss+=10;}
+		if(rs.getString("A42").equalsIgnoreCase(ans) && z42.equals("0"))
+				ss+=10;
+				}
+				
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A42",ans);
 		ps.setInt(1,ss);
@@ -1641,14 +1681,15 @@ try
 	else if(answer.equals("43"))
 	{
 		while(rst.next()) { 
-			z43=rst.getString("A43");}
+			z43=rst.getString("Q43");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A43=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A43").equals(ans) && z43.equals("0"))
-				ss+=20;}
+		if(rs.getString("A43").equalsIgnoreCase(ans) && z43.equals("0"))
+				ss+=20;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A43",ans);
 		ps.setInt(1,ss);
@@ -1679,14 +1720,15 @@ try
 	else if(answer.equals("44"))
 	{
 		while(rst.next()) { 
-			z44=rst.getString("A44");}
+			z44=rst.getString("Q44");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A1=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A1").equals(ans) && z44.equals("0"))
-				ss+=20;}
+		if(rs.getString("A1").equalsIgnoreCase(ans) && z44.equals("0"))
+				ss+=20;
+		}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A44",ans);
 		ps.setInt(1,ss);
@@ -1717,14 +1759,15 @@ try
 	else if(answer.equals("45"))
 	{
 		while(rst.next()) { 
-			z45=rst.getString("A45");}
+			z45=rst.getString("Q45");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A5=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A45").equals(ans) && z45.equals("0"))
-				ss+=10;}
+		if(rs.getString("A45").equalsIgnoreCase(ans) && z45.equals("0"))
+				ss+=10;
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A45",ans);
 		ps.setInt(1,ss);
@@ -1755,14 +1798,16 @@ try
 	else if(answer.equals("46"))
 	{
 		while(rst.next()) { 
-			z46=rst.getString("A46");}
+			z46=rst.getString("Q46");}
 		String res="select * from ANSWERS where TEAM_NAME='Shinjanee'";
 		PreparedStatement s=conn.prepareStatement(res);
 		ResultSet rs=s.executeQuery();
 		PreparedStatement ps=conn.prepareStatement("update ANSWERS set SCORE=?,A46=? where TEAM_NAME=?");
 		while(rs.next()){
-		if(rs.getString("A46").equals(ans) && z46.equals("0"))
-				ss+=5;}
+		if(rs.getString("A46").equalsIgnoreCase(ans) && z46.equals("0"))
+				ss+=5;
+	
+				}
 	 	session.setAttribute("SCORE",ss);
 	 	session.setAttribute("A46",ans);
 		ps.setInt(1,ss);

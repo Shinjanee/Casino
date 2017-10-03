@@ -13,11 +13,16 @@
 	top:5%
 	}
 .text1{
-	color:red;
+	color:white;
 	font-weight:bold;
-	position: relative;
+	position: fixed;
+	right:10px;
 	font-size:20px;
-	margin-left:45%;
+	padding: 5px;
+	border-radius: 3px;
+	border: 5px solid #7FAAB5 ;
+	background: black;
+	display: inline-block;
 }
 </style>
 	<head>
@@ -103,6 +108,7 @@ $(document).ready(function(){
 </script>
      <% 
  	String nn=(String)session.getAttribute("TEAM_NAME");
+    int se=(Integer)session.getAttribute("SCORE");
  	Class.forName("oracle.jdbc.driver.OracleDriver");
  	Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","system");
  	Statement stat= connection.createStatement();
@@ -111,6 +117,7 @@ $(document).ready(function(){
  	t.setString(1,nn);
  	ResultSet set=t.executeQuery();
  	out.print("<span class=\"text\">WELCOME "+nn+"</span>");
+ 	out.print("<span class=\"text1\">SCORE:"+se+"</span>");
  	%>
 	<div class="container-fluid">
  <div class="row">
@@ -140,7 +147,7 @@ $(document).ready(function(){
 		
 			<button type="submit" name="submit" class="btn btn-lg" onClick="button1()">SUBMIT</button>
 			<button type="button" id="hint" name="hint" onClick="mymFunction()" class="btn btn-lg" data-toggle="modal" data-target="#hintmodal">A HINT MAYBE</button>
-			<button type="button" name="button" class="btn btn-lg"  data-toggle="modal" data-target="#scoremodal">SCORE</button>
+			<!--  <button type="button" name="button" class="btn btn-lg"  data-toggle="modal" data-target="#scoremodal">SCORE</button>-->
 			<a href="instructions.jsp"><button class="btn btn-lg" data-toggle="modal" data-target="#instModal">READ INSTRUCTIONS</button></a>
 			<button class="btn btn-lg" onClick="fun()">QUIT</button>
 	</div>		 
@@ -167,7 +174,7 @@ $(document).ready(function(){
 <!-- Modal1 -->
 <div id="scoremodal" class="modal fade" role="dialog">
   <div class="modal-dialog">
-
+<!-- 
     <!-- Modal1 content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -180,7 +187,8 @@ $(document).ready(function(){
     </div>
 
   </div>
-</div>
+</div> -->
+
 <!-- Modal1 -->
 <div id="hintmodal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -197,6 +205,7 @@ $(document).ready(function(){
 
   </div>
 </div>
+
 
 <div class="modal fade" id="instModal" tabindex="-1" role="dialog" aria-labelledby="instModalLabel">
   <div class="modal-dialog" role="document">
@@ -1098,7 +1107,7 @@ k=k+1;
 m="0";
 if(cn==46)
 	{
-	window.location="end.jsp";
+	window.location="winner.jsp";
 	}
 <%
 }
@@ -1220,11 +1229,14 @@ out.println(e1);
 }
 
    function mymFunction() {
+	   
 	   var user="0";
 	    document.getElementById("demo").value = hint[picked]["question"];
 	    user=document.getElementById("demo").value;
 	    if(user=="No hint"){
 	       	document.getElementById("hint").disabled=true;}
+	    else
+	    	alert("Score Deducted");
 	}
   $('#hintmodal').on('show.bs.modal', function (event) {
 	      var button = $(event.relatedTarget) 
